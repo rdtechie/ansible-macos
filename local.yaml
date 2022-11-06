@@ -31,9 +31,9 @@
 #    - import_tasks: tasks/brave.yaml
 #      when: configure_brave
 #      tags: ['brave']
-#    - import_tasks: tasks/work.yaml
-#      when: configure_work
-#      tags: ['work']
+    - import_tasks: tasks/work.yaml
+      when: configure_work
+      tags: ['work']
 #    - import_tasks: tasks/personal.yaml
 #      when: configure_personal
 #      tags: ['personal']
