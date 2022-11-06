@@ -3,4 +3,4 @@ TAGS=${1?Error: no tags given}
 
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 
-ansible-playbook --ask-become-password --ask-vault-password --tags $1 local.yaml
+ansible-playbook -K --ask-vault-password --tags $1 local.yaml
