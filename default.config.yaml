@@ -7,6 +7,10 @@ configure_core: true
 personal: "{{ lookup('env', 'HOME') }}/personal"
 work: "{{ lookup('env', 'HOME') }}/work"
 
+# Git Clone Repositories
+configure_work: true
+configure_personal: true
+
 configure_dotfiles: false
 configure_terminal: false
 
