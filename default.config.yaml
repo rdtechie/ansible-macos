@@ -1,0 +1,22 @@
+---
+source_key: "./.ssh/id_rsa"
+dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+personal: "{{ lookup('env', 'HOME') }}/personal"
+work: "{{ lookup('env', 'HOME') }}/work"
+
+configure_dotfiles: false
+configure_terminal: false
+
+configure_dock: false
+dockitems_remove: []
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+# - name: 'Visual Studio Code'
+#   path: '/Applications/Visual Studio Code.app/'
+#   pos: 5
+
+homebrew_installed_packages:
+  - name: neovim, install_options: "HEAD"

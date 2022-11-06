@@ -1,0 +1,42 @@
+---
+- hosts: all
+  
+  vars_files:
+    - default.config.yaml
+
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.mac.mas
+      when: mas_installed_apps or mas_installed_app_ids
+      tags: ['mas']
+    - role: geerlingguy.mac.dock
+      when: configure_dock
+      tags: ['dock']
+
+  tasks:
+    - import_tasks: tasks/ssh.yaml
+      when: configure_ssh
+      tags: ['ssh']
+    - import_tasks: tasks/git.yaml
+      when: configure_git
+      tags: ['git']
+    - import_tasks: tasks/core.yaml
+      when: configure_core
+      tags: ['core']
+    - import_tasks: tasks/brave.yaml
+      when: configure_brave
+      tags: ['brave']
+    - import_tasks: tasks/work.yaml
+      when: configure_work
+      tags: ['work']
+    - import_tasks: tasks/personal.yaml
+      when: configure_personal
+      tags: ['personal']
+    - import_tasks: tasks/neovim.yaml
+      when: configure_neovim
+      tags: ['neovim']
+    - import_tasks: tasks/lsp.yaml
+      when: configure_lsp
+      tags: ['configure_lsp']
