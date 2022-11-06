@@ -20,4 +20,4 @@ dockitems_persist: []
 #   pos: 5
 
 homebrew_installed_packages:
-  - name: neovim, install_options: "HEAD"
+  - { name: neovim, state: head, install_options: "override-system-vi" }
