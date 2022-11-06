@@ -26,4 +26,5 @@ dockitems_persist: []
 #   pos: 5
 
 homebrew_installed_packages:
-  - { name: neovim, state: head, install_options: "override-system-vi" }
+  #- { name: neovim, state: head, install_options: "override-system-vi" }
+  - microsoft-teams
