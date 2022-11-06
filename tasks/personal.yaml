@@ -1,0 +1,19 @@
+# Clone ThePrimeAgen Anime
+- name: Anime exists
+  stat:
+    path: "{{ personal }}/anime"
+  register: anime
+  tags:
+    - install
+    - projects
+    - personal-projects
+
+- name: clone anime
+  ansible.builtin.git:
+    repo: 'git@github.com:ThePrimeagen/anime.git'
+    dest: "{{ personal }}/anime"
+  when: anime.stat.exists == false
+  tags:
+    - install
+    - projects
+    - personal-projects
