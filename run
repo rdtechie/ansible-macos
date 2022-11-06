@@ -1,6 +1,7 @@
 #!/bin/bash
 TAGS=${1?Error: no tags given}
 
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 
-ansible-playbook -i inventory -K --ask-vault-password --tags $1 local.yaml
+ansible-playbook -i inventory -K --tags $1 local.yaml
