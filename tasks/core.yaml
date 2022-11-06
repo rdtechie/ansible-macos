@@ -1,0 +1,34 @@
+---
+- name: Check if Work Directory Exists
+  stat:
+    path: "{{ work }}"
+  register: workdir
+  tags:
+    - install
+    - core
+
+- name: Create Work Directory if not exists
+  file:
+    path: "{{ work }}"
+    state: directory
+  when: workdir.stat.exists == false
+  tags:
+    - install
+    - core
+
+- name: Check if Personal Directory Exists
+  stat:
+    path: "{{ personal }}"
+  register: personaldir
+  tags:
+    - install
+    - core
+
+- name: Create Personal Directory if not exists
+  file:
+    path: "{{ personal }}"
+    state: directory
+  when: personaldir.stat.exists == false
+  tags:
+    - install
+    - core

@@ -19,6 +19,9 @@
     - import_tasks: tasks/ssh.yaml
       when: configure_ssh
       tags: ['ssh']
+    - import_tasks: tasks/core.yaml
+      when: configure_core
+      tags: ['core']
 #    - import_tasks: tasks/git.yaml
 #      when: configure_git
 #      tags: ['git']
