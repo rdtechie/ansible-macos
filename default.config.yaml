@@ -15,12 +15,23 @@ configure_personal: true
 configure_dotfiles: false
 configure_terminal: false
 
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
+configure_dock: true
+dockitems_remove: 
+  - Launchpad
+  - Safari
+  - Messages
+  - Mail
+  - Maps
+  - Photos
+  - FaceTime
+  - Calendar
+  - Contacts
+  - Reminders
+  - Notes
+  - TV
+  - Music
+  - Podcasts
+  - 'App Store'
 dockitems_persist: []
 # - name: 'Visual Studio Code'
 #   path: '/Applications/Visual Studio Code.app/'
