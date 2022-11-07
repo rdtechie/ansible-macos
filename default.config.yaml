@@ -15,6 +15,7 @@ configure_personal: true
 configure_dotfiles: false
 configure_terminal: false
 
+# Configure Dock
 configure_dock: true
 dockitems_remove: 
   - Launchpad
@@ -37,8 +38,16 @@ dockitems_persist: []
 #   path: '/Applications/Visual Studio Code.app/'
 #   pos: 5
 
+# Brew Packages
 homebrew_installed_packages:
+  - stow
   - { name: neovim, state: head }
+  - azure-cli
+  - terraform
+  - terraform-lsp
+  - lua
+  - luarocks
+  - lua-language-server
 
 homebrew_taps:
   - homebrew/core
@@ -51,3 +60,13 @@ homebrew_cask_apps:
   - notion
   - microsoft-auto-update
   - microsoft-office
+  - snagit
+  - camtasia
+  - gimp
+  - spotify
+  - visual-studio-code
+  - powershell
+
+# Mac App Store Apps
+mas_installed_apps: []
+
