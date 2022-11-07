@@ -41,6 +41,9 @@ dockitems_persist: []
 # Brew Packages
 homebrew_installed_packages:
   - stow
+  - openssl@3
+  - colima
+  - docker
   - { name: neovim, state: head }
   - azure-cli
   - terraform
@@ -65,7 +68,8 @@ homebrew_cask_apps:
   - gimp
   - spotify
   - visual-studio-code
-  - powershell
+  - microsoft-remote-desktop
+
 
 # Mac App Store Apps
 mas_installed_apps: []
