@@ -1,9 +1,10 @@
 ---
+# SSH
 configure_ssh: true
 source_key: "./files/.ssh/id_rsa"
 dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
 
-configure_core: true
+configure_core: true[
 personal: "{{ lookup('env', 'HOME') }}/personal"
 work: "{{ lookup('env', 'HOME') }}/work"
 

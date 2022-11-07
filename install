@@ -1,6 +1,36 @@
 #!/bin/bash
+set -e
 
-export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
+usage="$(basename "$0") [-h] [-p ANSIBLE_VAULT_PASSWORD]
+This script prepares the OS for running Ansible Playbooks
+where:
+    -h show this help text
+    -vpwkc Ansible Vault Password to set in Keychain"
+
+while getopts vpwkc: flag
+do
+  case "${flag}" in
+    vpwkc) VAULT_PASSWORD_KEYCHAIN=${OPTARG};;
+    :) printf "Missing argument for -%s\n" "$OPTARG" >&2; echo "&usage" >&2; exit 1;;
+   \?) printf "Illegal option: -%s\n" "OPTARG" >&2; echo "&usage" >&2; exit 1;;
+  esac
+done
+
+# Create Ansible Vault Password in Keychain
+if [ "$VAULT_PASSWORD_KEYCHAIN" ]; then
+  security add-generic-password -a ansible-sudo -s ansible-vault-password -w 
+fi
+
+
+export PATH="${HOME}/Library/Python/3.9/bin:/opt/homebrew/bin:${PATH}"
 sudo pip3 install --upgrade pip
 pip3 install ansible
 ansible-galaxy install -r requirements.yaml
+
+mkdir "${HOME}/bin"
+cp files/vault_password_file.sh "${HOME}/bin/vault_password_file.sh" 
+export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/bin/vault_password_file.sh"
+
+
+
+

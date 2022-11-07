@@ -3,6 +3,7 @@
   
   vars_files:
     - default.config.yaml
+    - default.secrets.yaml
 
   roles:
     - role: elliotweiser.osx-command-line-tools
