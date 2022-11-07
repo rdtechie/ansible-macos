@@ -51,6 +51,7 @@ homebrew_installed_packages:
   - lua
   - luarocks
   - lua-language-server
+  - koekeishiya/formulae/yabai
 
 homebrew_taps:
   - homebrew/core
