@@ -28,8 +28,8 @@ pip3 install ansible
 ansible-galaxy install -r requirements.yaml
 
 mkdir "${HOME}/bin"
-cp files/vault_password_file.sh "${HOME}/bin/vault_password_file.sh" 
-export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/bin/vault_password_file.sh"
+cp files/vault_password_file.sh "${HOME}/bin/vault_password_file" 
+export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/bin/vault_password_file"
 
 
 
