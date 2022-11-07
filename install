@@ -27,7 +27,7 @@ sudo pip3 install --upgrade pip
 pip3 install ansible
 ansible-galaxy install -r requirements.yaml
 
-cp files/vault_password_file.sh "${HOME}/bin/vault_password_file" 
+cp files/vault_password_file "${HOME}/bin/vault_password_file" 
 export ANSIBLE_VAULT_PASSWORD_FILE="${HOME}/bin/vault_password_file"
 
 
