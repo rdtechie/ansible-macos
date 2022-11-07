@@ -27,5 +27,16 @@ dockitems_persist: []
 #   pos: 5
 
 homebrew_installed_packages:
-  #- { name: neovim, state: head, install_options: "override-system-vi" }
+  - { name: neovim, state: head }
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
   - microsoft-teams
+  - brave-browser
+  - notion
+  - microsoft-auto-update
+  - microsoft-office
